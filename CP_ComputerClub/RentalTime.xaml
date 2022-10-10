@@ -1,0 +1,19 @@
+﻿<Window x:Class="CP_ComputerClub.RentalTime"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CP_ComputerClub"
+        mc:Ignorable="d"
+        Title="RentalTime" Height="400" Width="300" Loaded="Window_Loaded" MaxHeight="300" MaxWidth="300" MinHeight="300" MinWidth="300">
+    <WrapPanel Margin="5" Orientation="Vertical">
+        <Label FontSize="30">Time start:</Label>
+        <TextBox  FontSize="30" x:Name="txtBox_startTime" Width="250"></TextBox>
+        <Label  FontSize="30">Time end:</Label>
+        <TextBox  FontSize="30" x:Name="txtBox_endTime" Width="250"></TextBox>
+        <DockPanel Margin="5" LastChildFill="False">
+            <Button  FontSize="30" DockPanel.Dock="Left" Width="100" Margin="5" Click="Button_Click"> Ok</Button>
+            <Button  FontSize="30" DockPanel.Dock="Right" Width="100" Margin="5" Click="Button_Click_1"> Cancel</Button>
+        </DockPanel>
+    </WrapPanel>
+</Window>

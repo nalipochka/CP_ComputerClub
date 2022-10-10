@@ -1,0 +1,59 @@
+﻿<Window x:Class="CP_ComputerClub.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CP_ComputerClub"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="800" Loaded="Window_Loaded">
+    <Window.Resources>
+        <!--<Style x:Name="ListVievTrigger" TargetType="{x:Type ListViewItem}">
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="Red"></Setter>
+                </Trigger>
+                <Trigger Property="Content" Value="Свободен">
+                    <Setter Property="Foreground" Value="Green"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>-->
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+            <RowDefinition Height="3*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ListView 
+            x:Name="listView_Computers" 
+            Grid.Row="1"
+            Grid.Column="1" 
+            SelectionChanged="listView_Computers_SelectionChanged"
+            BorderBrush="Black">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Width="30">№</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=TypePC}" Width="100">Type</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=IsBusy}" Width="120">Busy/Free</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=IsBroken}" Width="120">Broken/Ready</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=TimeStart}" Width="120">Start</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=TimeEnd}" Width="120">End</GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <!--<DataGrid x:Name="listView_Computers" Grid.Row="1" Grid.Column="1" SelectionChanged="listView_Computers_SelectionChanged"></DataGrid>-->
+        <DockPanel LastChildFill="False">
+            <Button x:Name="btn_start" DockPanel.Dock="Left" Margin="5" Click="btn_start_Click">Reserve PC</Button>
+            <Button x:Name="btn_stop" DockPanel.Dock="Right" Margin="5" Click="btn_stop_Click">Release PC</Button>
+        </DockPanel>
+        <DockPanel Grid.Row="2" LastChildFill="True">
+            <Label DockPanel.Dock="Top">History:</Label>
+            <TextBox x:Name="txtBox_history" 
+                     DockPanel.Dock="Left" 
+                     Margin="5,0,5,5" 
+                     VerticalScrollBarVisibility="Visible"
+                     AcceptsReturn="True"
+                     IsReadOnly="True"></TextBox>
+        </DockPanel>
+    </Grid>
+</Window>
