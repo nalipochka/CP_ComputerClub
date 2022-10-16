@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\App.xaml
-21768653642
+3437916872
 
-15-1382712349
+13-577618828
 2141159938363
-MainWindow.xaml;RentalTime.xaml;
+MainWindow.xaml;Min_Or_Max_Window.xaml;RentalTime.xaml;
 
-False
+True
 

@@ -1,8 +1,13 @@
 D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\CP_ComputerClub.csproj.AssemblyReference.cache
 D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\MainWindow.g.cs
+D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\RentalTime.g.cs
 D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\App.g.cs
 D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\CP_ComputerClub_MarkupCompile.cache
 D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\CP_ComputerClub_MarkupCompile.lref
+D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\RentalTime.baml
+D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\CP_ComputerClub.dll
+D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\refint\CP_ComputerClub.dll
+D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\CP_ComputerClub.pdb
 D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\bin\Debug\net6.0-windows\CP_ComputerClub.exe
 D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\bin\Debug\net6.0-windows\CP_ComputerClub.deps.json
 D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\bin\Debug\net6.0-windows\CP_ComputerClub.runtimeconfig.json
@@ -46,10 +51,7 @@ D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\C
 D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\CP_ComputerClub.AssemblyInfo.cs
 D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\CP_ComputerClub.csproj.CoreCompileInputs.cache
 D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\CP_ComputerClub.csproj.CopyComplete
-D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\CP_ComputerClub.dll
-D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\refint\CP_ComputerClub.dll
-D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\CP_ComputerClub.pdb
 D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\CP_ComputerClub.genruntimeconfig.cache
 D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\ref\CP_ComputerClub.dll
-D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\RentalTime.g.cs
-D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\RentalTime.baml
+D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\Min_Or_Max_Window.g.cs
+D:\all\Проекты\CP_ComputerClub\CP_ComputerClub\obj\Debug\net6.0-windows\Min_Or_Max_Window.baml

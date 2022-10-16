@@ -52,6 +52,7 @@ namespace CP_ComputerClub
             DataList = context.Computers.Select(t => new ViewComputerData { Id = t.Id, TypePC = t.TypePc.TypePc, Broken = t.IsBroken, Busy = t.IsBusy, IsBusy = "", IsBroken = "", DateTimeStart = t.TimeStart, DateTimeEnd = t.TimeEnd }).ToList();
             listView_Computers.ItemsSource = null;
             listView_Computers.ItemsSource = DataList;
+            
         }
         private void UpdateHistoryBox(string text)
         {
@@ -61,9 +62,9 @@ namespace CP_ComputerClub
         }
         private async Task AddDataToHistoryAsync(DateTime? TimeStart, DateTime? TimeEnd, double price, int TypePcid)
         {
-            using(ComputerClubContext context = new ComputerClubContext())
+            using (ComputerClubContext context = new ComputerClubContext())
             {
-                
+
                 TimeSpan timeSpan = TimeEnd!.Value - TimeStart!.Value;
                 double hours = timeSpan.TotalHours;
                 double totalSum = Math.Round((price * hours), 2);
@@ -157,12 +158,12 @@ namespace CP_ComputerClub
                     double hours = tmpTime.TotalHours;
                     using (ComputerClubContext context = new ComputerClubContext())
                     {
-                        await context.Computers.Include(t=>t.TypePc).LoadAsync();
+                        await context.Computers.Include(t => t.TypePc).LoadAsync();
                         foreach (var item in context.Computers)
                         {
                             if (item.Id == data!.Id)
                             {
-                                rentalTime.TotalPrice = Math.Round((Convert.ToDouble(item.TypePc.Price) * hours),2);
+                                rentalTime.TotalPrice = Math.Round((Convert.ToDouble(item.TypePc.Price) * hours), 2);
                                 item.TimeStart = rentalTime.TimeStart;
                                 item.TimeEnd = rentalTime.TimeEnd;
                                 item.IsBusy = true;
@@ -206,6 +207,48 @@ namespace CP_ComputerClub
                     UpdateListViewData(context);
                 }
             }
+        }
+
+        private async void mounth_analysis_Click(object sender, RoutedEventArgs e)
+        {
+            using (ComputerClubContext context = new ComputerClubContext())
+            {
+                await context.Histories.LoadAsync();
+                var lastMonthClients = context.Histories.Select(t => t).Where(t => t.TimeStart.Month == 9 /*DateTime.Now.Month*/);
+
+                /*07:00 - 12:00*/
+                var morningClients = lastMonthClients.Select(t => t).
+                  Where(t => t.TimeStart.Hour >= 7 && t.TimeStart.Hour < 12).Count();
+                /*12:00 - 21:00*/
+                var dayClients = lastMonthClients.Select(t => t).
+                  Where(t => t.TimeStart.Hour >= 12 && t.TimeStart.Hour < 21).Count(); ;
+                /*21:00 - 07:00*/
+                var nightClients = lastMonthClients.Select(t => t).
+                  Where(t => t.TimeStart.Hour >= 21 || t.TimeStart.Hour < 07).Count(); ;
+
+                int max = morningClients;
+                if (dayClients > max)
+                    max = dayClients;
+                if (nightClients > max)
+                    max = nightClients;
+
+
+                if (max == morningClients)
+                    MessageBox.Show("Based on the analysis for the last month, the effective working time is:\r\n\"Morning (07:00 - 12:00)\"",
+                         "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                else if (max == dayClients)
+                    MessageBox.Show("Based on the analysis for the last month, the effective working time is:\r\n\"Day (12:00 - 21:00)\"",
+                        "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                else
+                    MessageBox.Show("Based on the analysis for the last month, the effective working time is:\r\n\"Night (21:00 - 07:00)\"",
+                        "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void min_or_max_quantity_Click(object sender, RoutedEventArgs e)
+        {
+            Min_Or_Max_Window window = new Min_Or_Max_Window();
+            window.Show();
         }
     }
 }

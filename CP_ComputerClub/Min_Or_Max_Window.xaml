@@ -1,0 +1,21 @@
+﻿<Window x:Class="CP_ComputerClub.Min_Or_Max_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CP_ComputerClub"
+        mc:Ignorable="d"
+        Title="Min_Or_Max_Window" Height="220" Width="300" MaxHeight="220" MaxWidth="300" MinHeight="220" MinWidth="300">
+    <StackPanel>
+        <Label>Beginning of period:</Label>
+        <DatePicker x:Name="beginning_DatePick" ></DatePicker>
+        <Label>End of period:</Label>
+        <DatePicker x:Name="end_DatePick"></DatePicker>
+        <DockPanel LastChildFill="False">
+            <Button Margin="10" Padding="20,0,20,0" Click="max_btn_Click">MAX</Button>
+            <Button DockPanel.Dock="Right" Margin="10" Padding="20,0,20,0" Click="min_btn_Click">MIN</Button>
+        </DockPanel>
+        <Button Margin="10">Cancel</Button>
+        
+    </StackPanel>
+</Window>
