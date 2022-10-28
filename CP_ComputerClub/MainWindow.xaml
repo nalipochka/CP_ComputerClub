@@ -5,19 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CP_ComputerClub"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800" Loaded="Window_Loaded" Background="#F8EDE3">
-    <Window.Resources>
-        <!--<Style x:Name="ListVievTrigger" TargetType="{x:Type ListViewItem}">
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Foreground" Value="Red"></Setter>
-                </Trigger>
-                <Trigger Property="Content" Value="Свободен">
-                    <Setter Property="Foreground" Value="Green"></Setter>
-                </Trigger>
-            </Style.Triggers>
-        </Style>-->
-    </Window.Resources>
+        Title="MainWindow" Height="600" Width="800" Loaded="Window_Loaded" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.7*"></RowDefinition>
@@ -35,26 +23,13 @@
                 <GridView>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Width="30">№</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=TypePC}" Width="100">Type</GridViewColumn>
-                    <GridViewColumn DisplayMemberBinding="{Binding Path=IsBusy}" Width="120">
-                        <!--<GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <TextBlock x:Name="txt1" Foreground="Green" Text="{Binding Path = IsBusy}">
-                                    <TextBlock.Triggers>
-                                        <DataTrigger Binding="{Binding XPath=IsBusy}" Value="Free">
-                                            <Setter Property="Foreground" Value="Red" TargetName="txt1"></Setter>
-                                        </DataTrigger>
-                                    </TextBlock.Triggers>
-                                </TextBlock>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>-->
-                        Busy/Free</GridViewColumn>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=IsBusy}" Width="120">Busy/Free</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=IsBroken}" Width="120">Broken/Ready</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=TimeStart}" Width="120">Start</GridViewColumn>
                     <GridViewColumn DisplayMemberBinding="{Binding Path=TimeEnd}" Width="120">End</GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
-        <!--<DataGrid x:Name="listView_Computers" Grid.Row="1" Grid.Column="1" SelectionChanged="listView_Computers_SelectionChanged"></DataGrid>-->
         <DockPanel LastChildFill="False" Grid.Row="1">
             <Button x:Name="btn_start" DockPanel.Dock="Left" Margin="5" Click="btn_start_Click">Reserve PC</Button>
             <Button x:Name="btn_stop" DockPanel.Dock="Right" Margin="5" Click="btn_stop_Click">Release PC</Button>
@@ -71,7 +46,6 @@
         <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
             <Button  DockPanel.Dock="Left"  Margin="3" Click="mounth_analysis_Click">Monthly analysis</Button>
             <Button  DockPanel.Dock="Right" Margin="3" Click="min_or_max_quantity_Click">Min. or Max. quantity for a certain period</Button>
-            <!--<Button  DockPanel.Dock="Right" Margin="3" Click="btn_stop_Click">Max. quantity for a certain period</Button>-->
         </StackPanel>
     </Grid>
     
